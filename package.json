@@ -2,7 +2,7 @@
     "name": "AviaryTwilioNodeServer",
     "version": "0.0.1",
     "author": "Ari Fuchs <ari@aviary.com>",
-    "description": "a simple example of accepting an incoming sms text via Twilio and rendering a photo with Aviary",
+    "description": "A simple example of accepting an incoming SMS text via Twilio and rendering a photo with Aviary",
     "repository": {
         "type": "git",
         "url": "https://github.com/afuchs/AviaryTwilioNodeServer.git"
