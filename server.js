@@ -3,16 +3,6 @@ var express         = require('express'),
     actionLists     = require('./actionLists.json'),
     Aviary          = require('aviary').Aviary;
     aviaryClient    = new Aviary(process.env.AVIARY_API_KEY, process.env.AVIARY_API_SECRET);
-    
-function generateTwiml(message) {
-    return ['<?xml version="1.0" encoding="UTF-8"?>',
-        '<Response>',
-            '<Message>',
-                message,
-            '</Message>',
-        '</Response>'
-        ].join('');
- }
 
 app.use(express.bodyParser());
 
@@ -36,6 +26,16 @@ app.post('/incoming', function(req, res) {
         return res.end(generateTwiml('Oops! Try sending an image url.'));
     }
 });
+
+	function generateTwiml(message) {
+	    return ['<?xml version="1.0" encoding="UTF-8"?>',
+	        '<Response>',
+	            '<Message>',
+	                message,
+	            '</Message>',
+	        '</Response>'
+	        ].join('');
+}
 
 var server = app.listen(process.env.PORT);
 console.log("Listening on port %d in %s mode", server.address().port, app.settings.env);
